@@ -48,6 +48,7 @@ class Settings implements ISettings {
 			'historySize' => $this->config->getHistorySize(),
 			'expiration' => $this->config->getExpiryInDays(),
 			'maximumLoginAttempts' => $this->config->getMaximumLoginAttempts(),
+			'excludedSpecialCharacters' => $this->config->getExcludedSpecialCharacters(),
 		]);
 
 		return $response;

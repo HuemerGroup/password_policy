@@ -203,4 +203,12 @@ class PasswordPolicyConfig {
 			0
 		);
 	}
+
+	public function getExcludedSpecialCharacters(): string {
+		return $this->config->getAppValue(
+			'password_policy',
+			'excludedSpecialCharacters',
+			''
+		);
+	}
 }

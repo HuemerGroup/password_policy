@@ -85,6 +85,9 @@ $(document).ready(function(){
 		var value = '0';
 		if (this.checked) {
 			value = '1';
+			$('#excludedSpecialCharacters').css('display', '');
+		}else{
+			$('#excludedSpecialCharacters').css('display', 'none');
 		}
 		OCP.AppConfig.setValue('password_policy', 'enforceSpecialCharacters', value);
 	});
@@ -94,6 +97,10 @@ $(document).ready(function(){
 			value = '1';
 		}
 		OCP.AppConfig.setValue('password_policy', 'enforceHaveIBeenPwned', value);
+	});
+	$('#password-policy-exclude-special-characters').change(function() {
+		var value = $('#password-policy-exclude-special-characters').val();
+		OCP.AppConfig.setValue('password_policy', 'excludedSpecialCharacters', value);
 	});
 
 	// register save handler for number input fields
@@ -113,6 +120,10 @@ $(document).ready(function(){
 		{
 			elem: '#password-policy-failed-login',
 			conf: 'maximumLoginAttempts'
+		},
+		{
+			elem: '#password-policy-exclude-special-characters',
+			conf: 'excludedSpecialCharacters'
 		},
 	].forEach(function (configField) {
 		console.log(configField);

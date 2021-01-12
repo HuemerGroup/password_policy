@@ -53,6 +53,7 @@ class Capabilities implements ICapability {
 					'enforceNumericCharacters' => $this->config->getEnforceNumericCharacters(),
 					'enforceSpecialCharacters' => $this->config->getEnforceSpecialCharacters(),
 					'enforceUpperLowerCase' => $this->config->getEnforceUpperLowerCase(),
+					'excludedSpecialCharacters' => $this->config->getExcludedSpecialCharacters(),
 					'api' => [
 						'generate' => $this->urlGenerator->linkToOCSRouteAbsolute('password_policy.API.generate'),
 						'validate' => $this->urlGenerator->linkToOCSRouteAbsolute('password_policy.API.validate'),

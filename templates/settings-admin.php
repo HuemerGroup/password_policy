@@ -73,6 +73,11 @@ style('password_policy', 'settings-admin');
 			   value="1" <?php if ($_['enforceSpecialCharacters']) print_unescaped('checked="checked"'); ?> />
 		<label for="password-policy-enforce-special-characters"><?php p($l->t('Enforce special characters'));?></label><br/>
 	</p>
+	<p id="excludedSpecialCharacters" <?php if (!$_['enforceSpecialCharacters']) print_unescaped('style="display:none"'); ?>>
+		<input type="text" name="password-policy-exclude-special-characters" id="password-policy-exclude-special-characters" class="text" autocomplete="off"
+			   value="<?php p($_['excludedSpecialCharacters']); ?>"/>
+		<label for="password-policy-exclude-special-characters"><?php p($l->t('Exclude special characters'));?></label><br/>
+	</p>
 	<p id="enforceHaveIBeenPwned">
 		<input type="checkbox" name="password-policy-enforce-have-i-been-pwned" id="password-policy-enforce-have-i-been-pwned" class="checkbox"
 			   value="1" <?php if ($_['enforceHaveIBeenPwned']) print_unescaped('checked="checked"'); ?> />
